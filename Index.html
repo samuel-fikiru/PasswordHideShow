@@ -1,16 +1,24 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Password Show Hide</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="input-container">
-        <input class="password-input js-password-input" type="text" placeholder="Password">
-        <button class="hiButton">Say hi </button>
+      <div class="position-container">
+        <input
+          class="password-input js-password-input"
+          type="text"
+          placeholder="Password"
+        />
+        <div class="icon-container">
+          <img class="hide-icon" src="icons/hide-icon.png" alt="" />
+        </div>
+      </div>
     </div>
-    
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
