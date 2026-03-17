@@ -1,15 +1,32 @@
-console.log('Hello')
+const iconAdress = {
+  hidden: "icons/hide-icon.png",
+  show: "icons/show-icon.png",
+};
+let hidden = false;
 
-const password = document.querySelector('.js-password-input');
-console.log(password.value)
+const password = document.querySelector(".js-password-input");
+let originalPass = "";
 
-password.addEventListener('onkeydown', (event)=>{
-    if (event.key === 'Enter'){
-        console.log(event)
-    }
-})
+const hideIcon = document.querySelector(".js-hide-icon");
+hideIcon.addEventListener("click", () => {
+  if (!hidden) {
+    hidePassword(password.value);
+  } else {
+    showPassword();
+  }
+});
 
-const hiButton = document.querySelector('.hiButton');
-hiButton.addEventListener('onkeydown', (event)=>{
-    console.log(event);
-})
+function hidePassword(pass) {
+  originalPass = pass;
+  let astericksContainer = "";
+  for (let i = 0; i < pass.length; i++) {
+    astericksContainer += "✱";
+  }
+  password.value = astericksContainer;
+  hidden = true;
+}
+
+function showPassword() {
+  password.value = originalPass;
+  hidden = false;
+}
